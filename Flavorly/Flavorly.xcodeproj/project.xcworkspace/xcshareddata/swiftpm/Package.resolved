@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "c0940e241945e6378c01fbd45fd3815579d47ef5",
+        "version" : "8.1.0"
+      }
+    },
+    {
+      "identity" : "uiimagecolors",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jathu/UIImageColors",
+      "state" : {
+        "revision" : "e49e6c32ea556e9fa0109dc79686bea4a10d41a2",
+        "version" : "2.2.0"
+      }
+    }
+  ],
+  "version" : 2
+}
