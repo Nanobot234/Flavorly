@@ -1,32 +1,79 @@
 # Flavorly
 An iOS app to display recipes from a provided endpoint
 
+
+# Flavorly
+
+An iOS app for displaying recipes fetched from a provided API endpoint.
+
 ### Steps to Run the App
-1. Clone or download the project from the repository.
-2. Open the `Flavorly.xcodeproj` file in Xcode.
-3. Select the "Flavorly" scheme.
+
+1. Clone or download the project from the repository.  
+2. Open the `Flavorly.xcodeproj` file in Xcode.  
+3. Select the "Flavorly" scheme. It likley will be preselected.
 4. Click the "Run" button (or press `Cmd + R`).
+
+
+### Configuration
+- The app fetches recipe data from an API. Ensure your internet connection is active.
+- No additional setup is required.
+
+### Architecture
+
+Flavorly was built based on the MVVM architectural pattern. The following details how the MVVM pattern is applied in my project
+
+**Models**
+
+**Recipe.swift**: Defines the components of a Recipe object including the cuisine type and name. The feilds of this object match the JSON object that will be fetched from the server.
+
+**RecipeService.swift**: Fetches data from the various API endpoint and decodes it in a Recipe object. Also includes various data validation statements and error handling. This class can be in its own networking layer as well
+
+***The Recipe.swift file can be found in the `Models` group folder while RecipeService.swift is in the `Services` group***
+
+**Views**
+
+**RecipeListView.swift**
+
+---
+
 ### Focus Areas
-I prioritized the UI design on the and also the arcitecture of the app. I prioritized the UI/UX because I feel that having a gerate user experience and design of the application is very important as that is what primarily makes users use an app and makes it easy to use. I also focused on the architecture of the app as it is essential to keep the code clean and o
+
+I prioritized **UI/UX design** and **app architecture** during development.  
+
+- **UI/UX Design**: A great user experience and an appealing interface are essential for engaging users. I focused on creating an intuitive and visually pleasing design to enhance usability and make the app enjoyable to use.  
+- **App Architecture**: Maintaining clean, modular, and well-structured code was a key priority. A good architecture ensures the app is scalable and easy to maintain.  
+
+---
 
 ### Time Spent
-I spent about 10 hours on the project, and this was scattered over several days. I allocated about 60% of my time on the front end part of the code and about 40% on the backend
+
+I dedicated approximately **10 hours** to this project, distributed over several days:  
+- **60% on front-end development**: Designing and building the UI and user experience.  
+- **40% on back-end integration**: Implementing API calls and handling data flow.  
+
+---
 
 ### Trade-offs and Decisions
-There werent significant tradeoffs I had to make , as I was able to implement all the necessary features of this application
+
+I was fortunate not to encounter significant trade-offs during development, as I successfully implemented all essential features.  
+
+---
 
 ### Weakest Part of the Project
-My project likley has the greatest weakness in part of the loading of the recipe list. The background for each list item is based on a computed gradient coloring. This effect does take time to load and can potentially slow down the app if there are a large number of recipes. But I included it because I feel that this effect gives the app a unique visual feel
 
+One potential weakness is the **loading of the recipe list**. The background for each list item is generated using a computed gradient based on the prominent colors of its associated image. While this creates a visually unique experience, the gradient computation can slow down the app if there are a large number of recipes. I chose to include this feature because I believe it adds a distinctive and visually appealing touch to the app.  
 
-### External Code and Dependencies:
-**KingFisher**: KingFisher easily displays and caches the images from the web for each recipe. 
+---
 
-**Repo URL**: https://github.com/onevcat/Kingfisher.git
+### External Code and Dependencies
 
-**UIImageColors**: Fetches the most prominent colors from an image. I used these colors to create a unqiue gradient color background for each image.
+- **[Kingfisher](https://github.com/onevcat/Kingfisher)**: A library for downloading and caching images from the web, used for fetching and displaying recipe photos.  
+- **[UIImageColors](https://github.com/jathu/UIImageColors)**: A library for extracting prominent colors from images. These colors are used to generate unique gradient backgrounds for each recipe item.  
 
-**Repo URL**: https://github.com/jathu/UIImageColors
+---
 
-### Additional Information: 
-As a developer still in the early stages of my career(about 2 years experience) I am continuing to learn and have learned some new concepts from this project. I am eager to continue to grow my technical and interpersonal skills while working at Fetch, or even as a fetch apprentice which I also applied for as well. Thank you.
+### Additional Information
+
+As a developer with about **two years of experience**, I am continually learning and growing. Working on this project allowed me to refine my skills and explore new concepts. I am eager to bring my passion for coding and learning to Fetch as a team member or as part of the Fetch apprenticeship program, for which I also applied.  
+
+Thank you for considering my project, and I look forward to the opportunity to contribute further!  
