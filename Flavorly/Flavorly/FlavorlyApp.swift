@@ -11,7 +11,7 @@ import SwiftUI
 struct FlavorlyApp: App {
     var body: some Scene {
         WindowGroup {
-            RecipeListView()
+            SplashScreen()
         }
     }
 }

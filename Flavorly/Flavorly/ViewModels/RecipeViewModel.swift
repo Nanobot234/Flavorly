@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// ViewModel to manage recipes, providing data binding for the UI and handling business logic.
+/// Fetches and manages recipe data, providing data binding for the UI and handling business logic.
 @MainActor
 class RecipeViewModel: ObservableObject {
     // MARK: - Properties

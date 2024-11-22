@@ -11,6 +11,8 @@ import SwiftUI
 
 /// Displays fetched `Recipe` objects in a vertical list view
 struct RecipeListView: View {
+    
+    /// The 
     @StateObject private var recipeViewModel = RecipeViewModel()
     
     @Environment(\.colorScheme) private var colorScheme
@@ -64,10 +66,10 @@ struct RecipeListView: View {
                     loadRecipes()
                 }
             }
-            .onChange(of: recipeViewModel.selectedCuisine, { _, newCuisine in
+            .onChange(of: recipeViewModel.selectedCuisine, perform: { newCuisine in
                 recipeViewModel.filterRecipes(by: newCuisine)
             })
-            .onChange(of: recipeViewModel.recipeErrorCaseNum, { _, num in
+            .onChange(of: recipeViewModel.recipeErrorCaseNum, perform: { num in
                 
                 if(num == 1 || num  == 2){
                     showNoRecipeErrorAlert = true
@@ -142,7 +144,7 @@ struct RecipeListView: View {
 
     // MARK: - Helper Functions
 
-    /// Loads the recipes from the API endpoint
+    /// Loads the recipes
     private func loadRecipes() {
         showLoadingScreen = true
         Task {

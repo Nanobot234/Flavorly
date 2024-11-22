@@ -38,7 +38,7 @@ struct Recipe: Decodable, Identifiable {
 }
 
 
-/// Represents a collection of recipes, designed for easy decoding from JSON.
+/// Represents a collection of recipes, designed to match the strcture of the decoded JSON.
 struct Recipes: Decodable {
     /// An array of `Recipe` objects.
     var recipes: [Recipe]

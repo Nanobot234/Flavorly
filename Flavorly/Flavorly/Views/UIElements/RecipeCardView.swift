@@ -9,6 +9,7 @@ import SwiftUI
 import UIImageColors
 import Kingfisher
 
+/// Displays the recipe image, name, and cuisine type for each recipe.
 struct RecipeCardView: View {
     var recipe: Recipe
     @State private var isExpanded: Bool = false // Tracks if the additional info is shown or hidden
@@ -35,7 +36,7 @@ struct RecipeCardView: View {
                     }
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 120, height: 120)
+                    .frame(width: 170, height: 170)
                     .cornerRadius(12)
                     .clipped()
                 
@@ -64,7 +65,7 @@ struct RecipeCardView: View {
                 }
             }
             .padding()
-            .frame(maxWidth: .infinity, maxHeight: 150)
+            .frame(maxWidth: .infinity, maxHeight: 200)
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: gradientColors),
@@ -83,14 +84,14 @@ struct RecipeCardView: View {
         Menu {
             // Check if sourceURL is valid before creating button
             if let sourceURLString = recipe.source_url, let sourceURL = URL(string: sourceURLString) {
-                Button("Visit Website") {
+                Button("View Recipe Details") {
                     openURL(sourceURL)
                 }
             }
             
             // Check if youtubeURL is valid before creating button
             if let youtubeURLString = recipe.youtube_url, let youtubeURL = URL(string: youtubeURLString) {
-                Button("Watch on YouTube") {
+                Button("Watch Recipe on Youtube") {
                     openURL(youtubeURL)
                 }
             }
